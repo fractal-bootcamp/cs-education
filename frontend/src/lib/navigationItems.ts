@@ -1,10 +1,15 @@
 import { NavigationItem } from "@/types/types";
-import { House } from "lucide-react";
+import { faAtom, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export const navigationItems: NavigationItem[] = [
   {
     label: "Home",
-    icon: House,
+    icon: faHouse,
     href: "/",
+  },
+  {
+    label: "Lessons",
+    icon: faAtom,
+    href: "/lessons",
   },
 ];
