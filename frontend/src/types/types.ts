@@ -1,9 +1,9 @@
-import type { LucideIcon } from "lucide-react";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 // Navigation
 export interface NavigationItem {
   label: string;
-  icon: LucideIcon;
+  icon: IconDefinition;
   href: string;
 }
 
