@@ -11,11 +11,11 @@ const LessonPage = ({ lesson }: LessonPageProps) => {
     <div>
       <h1>{lesson.title}</h1>
       <div>
-        {lesson.lessonBody.map((block) => {
+        {lesson.lessonBody.map((block, key) => {
           if (block.type === "text") {
-            return <LessonBlockText block={block} />;
+            return <LessonBlockText key={key} block={block} />;
           } else if (block.type === "executable") {
-            return <LessonBlockExecutable block={block} />;
+            return <LessonBlockExecutable key={key} block={block} />;
           }
         })}
       </div>

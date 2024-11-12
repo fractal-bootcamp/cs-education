@@ -1,4 +1,5 @@
 import { Lesson } from "@/types/types";
+import Link from "next/dist/client/link";
 import React from "react";
 
 interface LessonTabProps {
@@ -7,9 +8,9 @@ interface LessonTabProps {
 
 const LessonTab = ({ lesson }: LessonTabProps) => {
   return (
-    <div className="p-2 border border-gray-200 rounded-md">
+    <Link href={`/lessons/${lesson.id}`} className="p-2 border border-gray-200 rounded-md">
       <p>{lesson.title}</p>
-    </div>
+    </Link>
   );
 };
 
