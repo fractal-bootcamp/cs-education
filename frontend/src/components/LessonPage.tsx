@@ -9,8 +9,8 @@ interface LessonPageProps {
 const LessonPage = ({ lesson }: LessonPageProps) => {
   return (
     <div>
-      <h1>{lesson.title}</h1>
-      <div>
+      <p className="text-2xl font-bold text-center">{lesson.title}</p>
+      <div className="flex flex-col gap-2">
         {lesson.lessonBody.map((block, key) => {
           if (block.type === "text") {
             return <LessonBlockText key={key} block={block} />;

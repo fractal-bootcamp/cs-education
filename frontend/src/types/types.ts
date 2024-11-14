@@ -18,5 +18,5 @@ export interface LessonBlock {
   id: string;
   type: "text" | "executable";
   content: string;
-  answer?: string;
+  answer?: any;
 }
