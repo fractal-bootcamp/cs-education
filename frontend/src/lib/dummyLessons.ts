@@ -16,8 +16,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Create an array called 'fruits' containing three strings: 'apple', 'banana', and 'orange'\nlet fruits = ",
-        answer: "['apple', 'banana', 'orange']",
-        answerType: "array",
+        answer: ["apple", "banana", "orange"],
       },
       {
         id: "block-3",
@@ -30,8 +29,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Given the array: let numbers = [10, 20, 30, 40, 50]\nWrite code to access the third element (30)\nnumbers[",
-        answer: "[30]",
-        answerType: "array",
+        answer: [30],
       },
       {
         id: "block-5",
@@ -44,8 +42,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Add the number 60 to the end of this array\nlet nums = [10, 20, 30, 40, 50];\nnums.",
-        answer: "[10, 20, 30, 40, 50, 60]",
-        answerType: "array",
+        answer: [10, 20, 30, 40, 50, 60],
       },
       {
         id: "block-7",
@@ -58,8 +55,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Remove the last element from this array\nlet scores = [85, 90, 95, 100];\nscores.",
-        answer: "[85, 90, 95]",
-        answerType: "array",
+        answer: [85, 90, 95],
       },
       {
         id: "block-9",
@@ -72,8 +68,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Use the map method to multiply each number by 2\nlet numbers = [1, 2, 3, 4, 5];\nnumbers.map(num => ",
-        answer: "[2, 4, 6, 8, 10]",
-        answerType: "array",
+        answer: [2, 4, 6, 8, 10],
       },
     ],
   },
@@ -92,8 +87,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Given an array of numbers, use map to create a new array with each number squared.\nlet numbers = [1, 2, 3, 4];\nlet squares = numbers.map(num => ",
-        answer: "[1, 4, 9, 16]",
-        answerType: "array",
+        answer: [1, 4, 9, 16],
       },
       {
         id: "block-3",
@@ -106,8 +100,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Use map to convert an array of strings to uppercase.\nlet fruits = ['apple', 'banana', 'cherry'];\nlet upperFruits = fruits.map(fruit => ",
-        answer: "['APPLE', 'BANANA', 'CHERRY']",
-        answerType: "array",
+        answer: ["APPLE", "BANANA", "CHERRY"],
       },
       {
         id: "block-5",
@@ -120,8 +113,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Given an array of objects, use map to create an array of names.\nlet users = [{ name: 'Alice' }, { name: 'Bob' }, { name: 'Charlie' }];\nlet names = users.map(user => ",
-        answer: "['Alice', 'Bob', 'Charlie']",
-        answerType: "array",
+        answer: ["Alice", "Bob", "Charlie"],
       },
       {
         id: "block-7",
@@ -134,8 +126,7 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Use map to add 10 to each number in the array.\nlet numbers = [5, 10, 15];\nlet increased = numbers.map(num => ",
-        answer: "[15, 20, 25]",
-        answerType: "array",
+        answer: [15, 20, 25],
       },
       {
         id: "block-9",
@@ -148,8 +139,11 @@ export const dummyLessons: Lesson[] = [
         type: "executable",
         content:
           "Use map to create an array of objects with the original number and its square.\nlet numbers = [1, 2, 3];\nlet numberObjects = numbers.map(num => ({ number: num, square: ",
-        answer: "[{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }]",
-        answerType: "array",
+        answer: [
+          { number: 1, square: 1 },
+          { number: 2, square: 4 },
+          { number: 3, square: 9 },
+        ],
       },
     ],
   },

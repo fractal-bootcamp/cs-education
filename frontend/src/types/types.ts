@@ -19,5 +19,4 @@ export interface LessonBlock {
   type: "text" | "executable";
   content: string;
   answer?: any;
-  answerType?: "array";
 }
