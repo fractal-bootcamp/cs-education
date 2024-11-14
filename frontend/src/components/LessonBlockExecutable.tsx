@@ -1,4 +1,4 @@
-import { executeCode } from "@/lib/executeCode";
+import { submitCode } from "@/lib/submitCode";
 import { LessonBlock } from "@/types/types";
 import React, { useState } from "react";
 
@@ -11,7 +11,7 @@ const LessonBlockExecutable = ({ block }: LessonBlockExecutableProps) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const result = await executeCode(code);
+    const result = await submitCode(code, block.answer);
     console.log(result);
   };
 

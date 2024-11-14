@@ -1,6 +1,7 @@
 "use server";
 
 export const executeCode = async (code: string) => {
+  console.log(code);
   const evalCode = `(${code})()`;
   return await eval(evalCode);
 };
