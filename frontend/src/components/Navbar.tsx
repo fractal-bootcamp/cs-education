@@ -10,7 +10,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({ items }: NavbarProps) => {
-  console.log(items);
   return (
     <div className="flex items-center justify-between p-4 bg-gray-100">
       <div>Fractal Education</div>

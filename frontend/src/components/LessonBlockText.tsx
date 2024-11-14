@@ -6,7 +6,7 @@ interface LessonBlockTextProps {
 }
 
 const LessonBlockText = ({ block }: LessonBlockTextProps) => {
-  return <div>{block.content}</div>;
+  return <div className="text-xs border border-gray-300 rounded-md p-2">{block.content}</div>;
 };
 
 export default LessonBlockText;
