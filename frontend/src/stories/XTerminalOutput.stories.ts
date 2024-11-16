@@ -18,6 +18,6 @@ export const Primary: Story = {
   args: {
     content: "['orange', 'banana', 'apple']",
     createdDate: new Date(),
-    terminalPath: "~/fractal-education/arrays/lesson-1",
+    terminalPath: "~/arrays/lesson-1",
   },
 };
