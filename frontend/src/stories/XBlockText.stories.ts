@@ -1,14 +1,15 @@
-import XLessonBlockExecutable from "@/components/XLessonBlockExecutable";
 import type { Meta, StoryObj } from "@storybook/react";
 
+import XBlockText from "../components/XBlockText";
+
 const meta = {
-  title: "XLessonBlockExecutable",
-  component: XLessonBlockExecutable,
+  title: "XBlockText",
+  component: XBlockText,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof XLessonBlockExecutable>;
+} satisfies Meta<typeof XBlockText>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
