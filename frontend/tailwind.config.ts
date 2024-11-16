@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         codeGreen: "#00FF00",
+        codeEditor: "#253238",
       },
     },
   },
