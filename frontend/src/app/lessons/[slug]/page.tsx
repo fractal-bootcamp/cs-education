@@ -6,6 +6,7 @@ import { dummyLessons } from "@/lib/dummyLessons";
 import { useParams } from "next/navigation";
 
 import { submitCode } from "@/lib/submitCode";
+import XPageHeader from "@/components/XPageHeader";
 
 const page = () => {
   const params = useParams();
@@ -15,8 +16,8 @@ const page = () => {
     <div>
       {lesson ? (
         <div>
-          <p className="text-2xl font-bold text-center">{lesson.title}</p>
-          <div className="flex flex-col space-y-4 p-10">
+          <XPageHeader title={lesson.title} />
+          <div className="flex flex-col space-y-4 px-10">
             {lesson.lessonBody.map((block, key) => {
               if (block.type === "text") {
                 return <XBlockText key={key} text={block.content} />;

@@ -16,7 +16,7 @@ const XBlockExecutable = ({ text, placeholder, answer, onSubmit }: XBlockExecuta
   };
 
   return (
-    <div className="text-xs font-mono bg-gray-100 text-black shadow-sm py-6 px-4 flex flex-col space-y-4">
+    <div className="text-xs bg-gray-100 text-black shadow-sm py-6 px-4 flex flex-col space-y-4 leading-loose">
       <div>
         {text.split("\n").map((line, index) => (
           <p key={index} className="pb-2">
@@ -31,7 +31,7 @@ const XBlockExecutable = ({ text, placeholder, answer, onSubmit }: XBlockExecuta
             id="code"
             value={code}
             onChange={(e) => setCode(e.target.value)}
-            className="w-full h-40 bg-black text-codeGreen p-2 outline-none"
+            className="w-full h-40 bg-black text-codeGreen p-2 outline-none font-mono leading-snug"
             style={{ resize: "none" }}
           ></textarea>
           <button
