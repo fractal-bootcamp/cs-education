@@ -1,4 +1,4 @@
-interface XTerminalOutputProps {
+export interface XTerminalOutputProps {
   content: string;
   createdDate: Date;
   terminalPath: string;
