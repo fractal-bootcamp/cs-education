@@ -4,10 +4,17 @@ interface XBlockExecutableProps {
   text: string;
   placeholder: string;
   answer: any;
+  state: "past" | "current" | "future";
   onSubmit: (code: string, answer: any) => void;
 }
 
-const XBlockExecutable = ({ text, placeholder, answer, onSubmit }: XBlockExecutableProps) => {
+const XBlockExecutable = ({
+  text,
+  placeholder,
+  answer,
+  state,
+  onSubmit,
+}: XBlockExecutableProps) => {
   const [code, setCode] = useState(placeholder);
 
   const handleExecute = (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,8 +22,22 @@ const XBlockExecutable = ({ text, placeholder, answer, onSubmit }: XBlockExecuta
     onSubmit(code, answer);
   };
 
+  console.log(state);
+
+  const background = (): string => {
+    if (state === "past") {
+      return "bg-green-100";
+    } else if (state === "current") {
+      return "bg-gray-100";
+    } else {
+      return "hidden";
+    }
+  };
+
   return (
-    <div className="text-xs bg-gray-100 text-black shadow-sm py-6 px-4 flex flex-col space-y-4 leading-loose">
+    <div
+      className={`text-xs font-mono text-black shadow-sm py-6 px-4 flex flex-col space-y-4 leading-loose ${background()}`}
+    >
       <div>
         {text.split("\n").map((line, index) => (
           <p key={index} className="pb-2">
