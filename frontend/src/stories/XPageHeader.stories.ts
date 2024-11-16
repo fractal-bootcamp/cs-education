@@ -6,7 +6,7 @@ const meta = {
   title: "XPageHeader",
   component: XPageHeader,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof XPageHeader>;
