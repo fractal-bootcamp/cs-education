@@ -1,6 +1,5 @@
-import Navbar from "@/components/Navbar";
 import "./globals.css";
-import { navigationItems } from "@/lib/navigationItems";
+import XNavbar from "@/components/XNavbar";
 
 export default function RootLayout({
   children,
@@ -10,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning className={`antialiased`}>
-        <Navbar items={navigationItems} />
+        <XNavbar />
         {children}
       </body>
     </html>
