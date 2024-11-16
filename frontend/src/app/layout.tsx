@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className={`antialiased`}>
+      <body suppressHydrationWarning className={`antialiased font-mono`}>
         <XNavbar />
         {children}
       </body>
