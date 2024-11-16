@@ -3,26 +3,25 @@ import React, { useState } from "react";
 interface XBlockExecutableProps {
   text: string;
   placeholder: string;
-  onExecute: (code: string) => void;
+  answer: any;
+  onSubmit: (code: string, answer: any) => void;
 }
 
-const XBlockExecutable = ({ text, placeholder, onExecute }: XBlockExecutableProps) => {
+const XBlockExecutable = ({ text, placeholder, answer, onSubmit }: XBlockExecutableProps) => {
   const [code, setCode] = useState(placeholder);
 
   const handleExecute = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onExecute(code);
+    onSubmit(code, answer);
   };
 
   return (
-    <div className="text-xs font-mono bg-gray-800 text-white shadow-sm py-6 px-4 flex flex-col space-y-4">
+    <div className="text-xs font-mono bg-gray-100 text-black shadow-sm py-6 px-4 flex flex-col space-y-4">
       <div>
         {text.split("\n").map((line, index) => (
-          <>
-            <p key={index} className="pb-2">
-              {line}
-            </p>
-          </>
+          <p key={index} className="pb-2">
+            {line}
+          </p>
         ))}
       </div>
       <div>
@@ -37,7 +36,7 @@ const XBlockExecutable = ({ text, placeholder, onExecute }: XBlockExecutableProp
           ></textarea>
           <button
             type="submit"
-            className="text-black bg-white px-4 py-2 w-full hover:bg-black hover:text-codeGreen"
+            className="text-black bg-white px-4 py-2 w-full border-2 border-black hover:bg-black hover:text-codeGreen"
           >
             Execute
           </button>
