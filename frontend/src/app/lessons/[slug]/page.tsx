@@ -34,15 +34,16 @@ const page = () => {
       {lesson ? (
         <div>
           <XPageHeader title={lesson.title} />
-          <div className="flex flex-col space-y-4 px-10">
+          <div className="flex flex-col space-y-4 px-10 pb-56">
             {lesson.lessonBody.map((block, key) => {
               if (block.type === "text") {
-                return <XBlockText key={key} text={block.content} />;
+                return <XBlockText key={key} text={block.content} state={block.state} />;
               } else if (block.type === "executable") {
                 return (
                   <XBlockExecutable
                     key={key}
                     text={block.content}
+                    state={block.state}
                     placeholder=""
                     answer={block.answer}
                     onSubmit={handleSubmitCode}

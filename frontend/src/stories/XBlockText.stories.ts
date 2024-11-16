@@ -16,6 +16,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+    state: "future",
+    text: "Arrays in JavaScript are ordered collections that can hold multiple values of any type. They are defined using square brackets [] and can contain numbers, strings, objects, or even other arrays.\n\nLet's start by learning how to create and access arrays.",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    state: "current",
+    text: "Arrays in JavaScript are ordered collections that can hold multiple values of any type. They are defined using square brackets [] and can contain numbers, strings, objects, or even other arrays.\n\nLet's start by learning how to create and access arrays.",
+  },
+};
+
+export const Hidden: Story = {
+  args: {
+    state: "future",
     text: "Arrays in JavaScript are ordered collections that can hold multiple values of any type. They are defined using square brackets [] and can contain numbers, strings, objects, or even other arrays.\n\nLet's start by learning how to create and access arrays.",
   },
 };
