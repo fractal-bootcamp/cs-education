@@ -1,16 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 
-import XLessonBlockText from "../components/XLessonBlockText";
+import XBlockText from "../components/XBlockText";
 
 const meta = {
-  title: "XLessonBlockText",
-  component: XLessonBlockText,
+  title: "XBlockText",
+  component: XBlockText,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof XLessonBlockText>;
+} satisfies Meta<typeof XBlockText>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
