@@ -18,7 +18,7 @@ export const dummyLessons: Lesson[] = [
         content:
           "Create an array called 'fruits' containing three strings: 'apple', 'banana', and 'orange'\nlet fruits = ",
         answer: ["apple", "banana", "orange"],
-        state: "current",
+        state: "future",
       },
       {
         id: "block-3",
