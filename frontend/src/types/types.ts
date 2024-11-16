@@ -20,3 +20,11 @@ export interface LessonBlock {
   content: string;
   answer?: any;
 }
+
+// Terminal outputs
+export interface TerminalOutput {
+  id: string;
+  content: string;
+  createdDate: Date;
+  terminalPath: string;
+}
