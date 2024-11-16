@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
 interface XBlockExecutableProps {
+  blockIndex: number;
   text: string;
   placeholder: string;
   answer: any;
   state: "past" | "current" | "future";
-  onSubmit: (code: string, answer: any) => void;
+  onSubmit: (code: string, answer: any, blockIndex: number) => void;
 }
 
 const XBlockExecutable = ({
+  blockIndex,
   text,
   placeholder,
   answer,
@@ -19,7 +21,7 @@ const XBlockExecutable = ({
 
   const handleExecute = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit(code, answer);
+    onSubmit(code, answer, blockIndex);
   };
 
   console.log(state);

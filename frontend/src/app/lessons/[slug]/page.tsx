@@ -2,24 +2,32 @@
 
 import XBlockExecutable from "@/components/XBlockExecutable";
 import XBlockText from "@/components/XBlockText";
-import { dummyLessons } from "@/lib/dummyLessons";
 import { useParams } from "next/navigation";
 
 import { submitCode } from "@/lib/submitCode";
 import XPageHeader from "@/components/XPageHeader";
 import { storeTerminalOutput } from "@/stores/storeTerminalOutput";
 import XTerminal from "@/components/XTerminal";
+import { storeLesson } from "@/stores/storeLesson";
+import { updateLessonBlocks } from "@/lib/updateLessonBlocks";
+import { Lesson } from "@/types/types";
 
 const page = () => {
   const params = useParams();
-  const lesson = dummyLessons.find((lesson) => lesson.id === params.slug);
+  const { lessons, updateLesson } = storeLesson();
+
+  const lesson = lessons.find((lesson) => lesson.id === params.slug);
+
+  if (!lesson) {
+    return <div></div>;
+  }
 
   const { terminalOutputs, createTerminalOutput } = storeTerminalOutput();
 
   console.log(terminalOutputs);
 
-  const handleSubmitCode = async (code: string, answer: any) => {
-    const { codeResult } = await submitCode(code, answer);
+  const handleSubmitCode = async (code: string, answer: any, blockIndex: number) => {
+    const { codeResult, codeEvaluation } = await submitCode(code, answer);
     const codeResultStringified = codeResult.toString();
     createTerminalOutput({
       id: new Date().toISOString(),
@@ -27,6 +35,10 @@ const page = () => {
       createdDate: new Date(),
       terminalPath: "/arrays/lesson-1",
     });
+    if (codeEvaluation) {
+      const newLesson: Lesson = updateLessonBlocks(lesson, blockIndex);
+      updateLesson(newLesson, lesson.id);
+    }
   };
 
   return (
@@ -42,6 +54,7 @@ const page = () => {
                 return (
                   <XBlockExecutable
                     key={key}
+                    blockIndex={key}
                     text={block.content}
                     state={block.state}
                     placeholder=""
