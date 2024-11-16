@@ -1,11 +1,15 @@
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 interface XBlockTextProps {
+  blockIndex: number;
   text: string;
   state: "past" | "current" | "future";
+  onCheck: (blockIndex: number) => void;
 }
 
-const XBlockText = ({ text, state }: XBlockTextProps) => {
+const XBlockText = ({ blockIndex, text, state, onCheck }: XBlockTextProps) => {
   const background = (): string => {
     if (state === "past") {
       return "bg-green-100";
@@ -24,6 +28,16 @@ const XBlockText = ({ text, state }: XBlockTextProps) => {
           {line}
         </p>
       ))}
+      <div className="w-full flex justify-end">
+        <button
+          onClick={() => onCheck(blockIndex)}
+          className={`rounded-full h-4 w-4 p-4 border-2 border-black flex justify-center items-center ${
+            state === "past" ? "bg-green-500" : ""
+          }`}
+        >
+          <FontAwesomeIcon icon={faCheck} />
+        </button>
+      </div>
     </div>
   );
 };

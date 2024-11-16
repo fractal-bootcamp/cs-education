@@ -26,6 +26,11 @@ const page = () => {
 
   console.log(terminalOutputs);
 
+  const handleCheck = (blockIndex: number) => {
+    const newLesson: Lesson = updateLessonBlocks(lesson, blockIndex);
+    updateLesson(newLesson, lesson.id);
+  };
+
   const handleSubmitCode = async (code: string, answer: any, blockIndex: number) => {
     const { codeResult, codeEvaluation } = await submitCode(code, answer);
     const codeResultStringified = codeResult.toString();
@@ -49,7 +54,15 @@ const page = () => {
           <div className="flex flex-col space-y-4 px-10 pb-56">
             {lesson.lessonBody.map((block, key) => {
               if (block.type === "text") {
-                return <XBlockText key={key} text={block.content} state={block.state} />;
+                return (
+                  <XBlockText
+                    key={key}
+                    blockIndex={key}
+                    text={block.content}
+                    state={block.state}
+                    onCheck={handleCheck}
+                  />
+                );
               } else if (block.type === "executable") {
                 return (
                   <XBlockExecutable
