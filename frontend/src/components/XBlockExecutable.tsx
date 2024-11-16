@@ -31,7 +31,7 @@ const XBlockExecutable = ({ text, placeholder, answer, onSubmit }: XBlockExecuta
             id="code"
             value={code}
             onChange={(e) => setCode(e.target.value)}
-            className="w-full h-40 bg-black text-codeGreen p-2 outline-none font-mono leading-snug"
+            className="w-full h-40 bg-codeEditor text-codeGreen p-2 outline-none font-mono leading-snug"
             style={{ resize: "none" }}
           ></textarea>
           <button
